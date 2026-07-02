@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/challenges.json</file>
+        <file>resources/challenges_c.json</file>
+        <file>resources/challenges_java.json</file>
+        <file>resources/icons/app_icon.png</file>
+        <file>resources/tcc.zip</file>
+    </qresource>
+</RCC>

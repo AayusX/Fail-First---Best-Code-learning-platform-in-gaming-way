@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FailFirst - Learn Programming by Fixing Bugs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <!-- Navigation Dots -->
+    <div class="nav-dots" id="navDots"></div>
+    
+    <!-- Slides Container -->
+    <div class="slides-container" id="slidesContainer">
+        
+        <!-- Slide 1: Title Slide -->
+        <section class="slide active" data-slide="1">
+            <div class="slide-content">
+                <div class="title-slide">
+                    <h1 class="main-title">FailFirst</h1>
+                    <h2 class="subtitle">Learn Programming by Fixing Bugs</h2>
+                    <p class="tagline">A fun and smart way to become a better programmer</p>
+                    <div class="scroll-hint">
+                        <span>Scroll to explore</span>
+                        <div class="arrow-down">↓</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: What is FailFirst? -->
+        <section class="slide" data-slide="2">
+            <div class="slide-content">
+                <h2 class="slide-title">What is FailFirst?</h2>
+                <div class="content-box">
+                    <p class="intro-text">
+                        FailFirst is a <strong>learning application</strong> that helps you master programming 
+                        in a completely different way.
+                    </p>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="icon">🐛</div>
+                            <h3>Learn by Fixing</h3>
+                            <p>Instead of just reading about code, you <strong>fix broken code</strong>. This helps you understand mistakes faster.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">🎮</div>
+                            <h3>Make It Fun</h3>
+                            <p>Earn points, unlock achievements, and compete with friends. Learning becomes an <strong>exciting game</strong>.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">📚</div>
+                            <h3>Real Skills</h3>
+                            <p>Every challenge teaches you something useful. You'll learn <strong>C, C++, and Java</strong> step by step.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Login & Authentication -->
+        <section class="slide" data-slide="3">
+            <div class="slide-content">
+                <h2 class="slide-title">Simple & Secure Login</h2>
+                <div class="image-showcase">
+                    <img src="auth.png" alt="Login Screen" class="showcase-image">
+                    <div class="description-box">
+                        <h3>Get Started Easily</h3>
+                        <ul>
+                            <li><strong>Create your account</strong> in just a few seconds</li>
+                            <li><strong>Choose your username</strong> and password</li>
+                            <li><strong>Your progress is saved</strong> automatically</li>
+                            <li>Beautiful, clean design that's easy to use</li>
+                        </ul>
+                        <p class="note">All your data stays on your computer - completely private!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Choose Your Language -->
+        <section class="slide" data-slide="4">
+            <div class="slide-content">
+                <h2 class="slide-title">Pick Your Programming Language</h2>
+                <div class="image-showcase reverse">
+                    <div class="description-box">
+                        <h3>Three Languages to Master</h3>
+                        <ul>
+                            <li><strong>C Programming:</strong> 20+ lessons on pointers, memory, and core concepts</li>
+                            <li><strong>C++:</strong> 25+ lessons from basics to advanced object-oriented programming</li>
+                            <li><strong>Java:</strong> 15+ lessons covering classes, interfaces, and collections</li>
+                        </ul>
+                        <p class="highlight">Each language has carefully made lessons that start simple and get more challenging as you improve.</p>
+                    </div>
+                    <img src="languages.png" alt="Language Selection" class="showcase-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Levels & Challenges -->
+        <section class="slide" data-slide="5">
+            <div class="slide-content">
+                <h2 class="slide-title">Learn Step by Step</h2>
+                <div class="image-showcase">
+                    <img src="levels.png" alt="Levels Screen" class="showcase-image">
+                    <div class="description-box">
+                        <h3>60+ Debugging Challenges</h3>
+                        <ul>
+                            <li><strong>Start from the basics</strong> and work your way up</li>
+                            <li>Each lesson has a <strong>story</strong> that makes it interesting</li>
+                            <li><strong>Fix bugs</strong> in real code to learn by doing</li>
+                            <li>See your <strong>streak</strong> grow as you practice daily</li>
+                            <li>Unlock new levels as you complete challenges</li>
+                        </ul>
+                        <p class="note">The app will guide you through each step - no confusion!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Leaderboard -->
+        <section class="slide" data-slide="6">
+            <div class="slide-content">
+                <h2 class="slide-title">Compete & Stay Motivated</h2>
+                <div class="image-showcase reverse">
+                    <div class="description-box">
+                        <h3>Track Your Progress</h3>
+                        <ul>
+                            <li><strong>See your rank</strong> among other learners</li>
+                            <li>Earn <strong>XP (experience points)</strong> for every challenge</li>
+                            <li>Build a <strong>daily streak</strong> to stay consistent</li>
+                            <li>Compare your progress with friends</li>
+                            <li>Challenge yourself to reach the top!</li>
+                        </ul>
+                        <p class="highlight">Competition makes learning more fun and keeps you coming back every day.</p>
+                    </div>
+                    <img src="leaderboard.png" alt="Leaderboard" class="showcase-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Profile & Customization -->
+        <section class="slide" data-slide="7">
+            <div class="slide-content">
+                <h2 class="slide-title">Your Personal Profile</h2>
+                <div class="image-showcase">
+                    <img src="profile.png" alt="User Profile" class="showcase-image">
+                    <div class="description-box">
+                        <h3>Track Everything</h3>
+                        <ul>
+                            <li><strong>View your total XP</strong> and level</li>
+                            <li>See your <strong>current streak</strong> and longest streak</li>
+                            <li>Check your <strong>achievements</strong> and badges</li>
+                            <li>Review which lessons you've completed</li>
+                            <li>Monitor your progress in each language</li>
+                        </ul>
+                        <p class="note">Your profile shows how far you've come on your learning journey!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Avatar Customization -->
+        <section class="slide" data-slide="8">
+            <div class="slide-content">
+                <h2 class="slide-title">Make It Your Own</h2>
+                <div class="image-showcase reverse">
+                    <div class="description-box">
+                        <h3>Customize Your Avatar</h3>
+                        <ul>
+                            <li><strong>Create your unique character</strong> with different styles</li>
+                            <li>Choose from <strong>many colors and combinations</strong></li>
+                            <li><strong>Express yourself</strong> with different looks</li>
+                            <li>Stand out on the leaderboard</li>
+                            <li>Have fun making your avatar look cool!</li>
+                        </ul>
+                        <p class="highlight">Your avatar represents you in the app - make it special!</p>
+                    </div>
+                    <img src="avatar.png" alt="Avatar Customization" class="showcase-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Shop -->
+        <section class="slide" data-slide="9">
+            <div class="slide-content">
+                <h2 class="slide-title">Reward Yourself</h2>
+                <div class="image-showcase">
+                    <img src="shop.png" alt="Shop" class="showcase-image">
+                    <div class="description-box">
+                        <h3>Spend Your Points</h3>
+                        <ul>
+                            <li><strong>Use the XP you earned</strong> to buy cool items</li>
+                            <li>Unlock <strong>new avatar parts</strong> and accessories</li>
+                            <li>Get <strong>special effects</strong> and animations</li>
+                            <li>More items as you level up</li>
+                            <li>Show off what you've earned!</li>
+                        </ul>
+                        <p class="note">The more you learn, the more rewards you unlock!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Key Features -->
+        <section class="slide" data-slide="10">
+            <div class="slide-content">
+                <h2 class="slide-title">Why FailFirst is Special</h2>
+                <div class="content-box">
+                    <div class="features-list">
+                        <div class="feature-large">
+                            <div class="feature-icon">💾</div>
+                            <h3>Works Anywhere</h3>
+                            <p>FailFirst is <strong>portable</strong> - just copy it to a USB drive and use it on any computer. No installation needed!</p>
+                        </div>
+                        <div class="feature-large">
+                            <div class="feature-icon">🔧</div>
+                            <h3>No Setup Required</h3>
+                            <p>The app comes with everything you need. You don't need to install compilers or other software - <strong>just run and start learning</strong>.</p>
+                        </div>
+                        <div class="feature-large">
+                            <div class="feature-icon">✨</div>
+                            <h3>Beautiful Design</h3>
+                            <p>Smooth animations, clean layouts, and a <strong>pleasant experience</strong> that makes learning enjoyable.</p>
+                        </div>
+                        <div class="feature-large">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Learn by Doing</h3>
+                            <p>Reading is good, but <strong>fixing actual bugs</strong> is better. You'll remember more when you solve real problems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: How It Works -->
+        <section class="slide" data-slide="11">
+            <div class="slide-content">
+                <h2 class="slide-title">How Does It Work?</h2>
+                <div class="content-box">
+                    <div class="steps-container">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h3>Choose a Challenge</h3>
+                            <p>Pick a lesson based on what you want to learn. Each one teaches a specific programming concept.</p>
+                        </div>
+                        <div class="step-arrow">→</div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h3>Read the Story</h3>
+                            <p>Every challenge has a fun story that explains the problem you need to solve.</p>
+                        </div>
+                        <div class="step-arrow">→</div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h3>Fix the Bug</h3>
+                            <p>Look at the broken code and figure out what's wrong. Make your changes to fix it.</p>
+                        </div>
+                        <div class="step-arrow">→</div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <h3>Test & Learn</h3>
+                            <p>Run your code and see if it works! You'll get instant feedback and earn XP when you succeed.</p>
+                        </div>
+                    </div>
+                    <p class="conclusion">It's that simple! Learning becomes natural when you practice fixing real problems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 12: Final Call to Action -->
+        <section class="slide" data-slide="12">
+            <div class="slide-content">
+                <div class="title-slide">
+                    <h1 class="main-title">Ready to Start?</h1>
+                    <h2 class="subtitle">Join FailFirst Today</h2>
+                    <div class="cta-box">
+                        <p class="cta-text">
+                            Whether you're a complete beginner or want to improve your skills,<br>
+                            FailFirst makes learning programming <strong>fun, simple, and effective</strong>.
+                        </p>
+                        <div class="benefits">
+                            <span class="benefit">✓ 60+ Challenges</span>
+                            <span class="benefit">✓ 3 Languages</span>
+                            <span class="benefit">✓ Gamified Learning</span>
+                            <span class="benefit">✓ Completely Portable</span>
+                        </div>
+                        <p class="final-message">
+                            Download FailFirst and start your programming journey today!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Navigation Controls -->
+    <button class="nav-button prev" id="prevBtn">←</button>
+    <button class="nav-button next" id="nextBtn">→</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

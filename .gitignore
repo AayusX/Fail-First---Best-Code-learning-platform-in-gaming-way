@@ -1,0 +1,10 @@
+# Add to .gitignore
+build/
+build-*/
+*.user
+*.pro.user
+FailFirstData/
+deploy/
+*.exe
+*.dll
+.qmake.stash

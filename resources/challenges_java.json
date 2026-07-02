@@ -1,0 +1,334 @@
+[
+  {
+    "id": 201,
+    "type": "lesson_unit",
+    "title": "Module 1: Hello Java",
+    "language": "java",
+    "difficulty": "Intro",
+    "description": "Write once, run anywhere.",
+    "story_text": "# ☕ The Coffee Cup\n\nJava runs on the JVM (Java Virtual Machine). Everything must be in a **class**.\n\n`System.out.println(\"Hello\");`",
+    "quiz_data": "[{\"question\": \"Main method signature?\", \"options\": [\"void main()\", \"public static void main(String[] args)\", \"int main()\", \"def main\"], \"answer\": 1}]",
+    "buggy_code": "public class Main {\n    public static void main(String[] args) {\n        // BUG: capitalization error\n        system.out.println(\"Hello World\");\n    }\n}",
+    "solution_code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello World\");\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "Hello World"
+      }
+    ],
+    "hints": [
+      "Java is case-sensitive.",
+      "'System' must start with uppercase S."
+    ],
+    "xp": 100
+  },
+  {
+    "id": 202,
+    "type": "lesson_unit",
+    "title": "Module 2: Variables",
+    "language": "java",
+    "difficulty": "Easy",
+    "description": "Storing data in Java.",
+    "story_text": "# 📦 Types\n\n- `int`: Integers\n- `double`: Decimals\n- `boolean`: true/false\n- `String`: Text (Capital S!)",
+    "quiz_data": "[{\"question\": \"String starts with?\", \"options\": [\"lowercase s\", \"Uppercase S\", \"Any\", \"$\"], \"answer\": 1}]",
+    "buggy_code": "public class Main {\n    public static void main(String[] args) {\n        int x = 10;\n        // BUG: Type mismatch\n        boolean flag = \"true\";\n        System.out.println(flag);\n    }\n}",
+    "solution_code": "public class Main {\n    public static void main(String[] args) {\n        int x = 10;\n        boolean flag = true;\n        System.out.println(flag);\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "true"
+      }
+    ],
+    "hints": [
+      "Booleans are not strings. Remove quotes."
+    ],
+    "xp": 150
+  },
+  {
+    "id": 203,
+    "type": "lesson_unit",
+    "title": "Module 3: Strings Comparison",
+    "language": "java",
+    "difficulty": "Medium",
+    "description": "The classic Java Trap.",
+    "story_text": "# 🎭 The Twin Trap\n\n`==` compares object references (memory address).\n`.equals()` compares content.\n\nAlways use `.equals()` for Strings!",
+    "quiz_data": "[{\"question\": \"Compare string content?\", \"options\": [\"==\", \".equals()\", \".same()\", \"=\"]. \"answer\": 1}]",
+    "buggy_code": "public class Main {\n    public static void main(String[] args) {\n        String s1 = new String(\"Hello\");\n        String s2 = new String(\"Hello\");\n        // BUG: Using == on objects\n        if (s1 == s2) {\n            System.out.println(\"Equal\");\n        } else {\n            System.out.println(\"Not Equal\");\n        }\n    }\n}",
+    "solution_code": "public class Main {\n    public static void main(String[] args) {\n        String s1 = new String(\"Hello\");\n        String s2 = new String(\"Hello\");\n        if (s1.equals(s2)) {\n            System.out.println(\"Equal\");\n        } else {\n            System.out.println(\"Not Equal\");\n        }\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "Equal"
+      }
+    ],
+    "hints": [
+      "Use .equals() for Strings."
+    ],
+    "xp": 200
+  },
+  {
+    "id": 204,
+    "type": "lesson_unit",
+    "title": "Module 4: Arrays",
+    "language": "java",
+    "difficulty": "Easy",
+    "description": "Fixed size lists.",
+    "story_text": "# 📋 Lists\n\n`int[] arr = {1, 2, 3};`\n\nUse `.length` to get size (no parentheses!).",
+    "quiz_data": "[{\"question\": \"Get array size?\", \"options\": [\".size()\", \".length\", \".length()\", \".count\"], \"answer\": 1}]",
+    "buggy_code": "public class Main {\n    public static void main(String[] args) {\n        int[] nums = {1, 2, 3};\n        // BUG: length is a property, not a method\n        System.out.println(nums.length());\n    }\n}",
+    "solution_code": "public class Main {\n    public static void main(String[] args) {\n        int[] nums = {1, 2, 3};\n        System.out.println(nums.length);\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "3"
+      }
+    ],
+    "hints": [
+      "Remove parentheses () from length."
+    ],
+    "xp": 150
+  },
+  {
+    "id": 205,
+    "type": "lesson_unit",
+    "title": "Module 5: Loops",
+    "language": "java",
+    "difficulty": "Easy",
+    "description": "Repeating code.",
+    "story_text": "# 🔁 Cycles\n\n`for (int i=0; i<5; i++)`\n\nSame as C++.",
+    "quiz_data": "[{\"question\": \"Start index?\", \"options\": [\"1\", \"0\", \"-1\", \"Any\"], \"answer\": 1}]",
+    "buggy_code": "public class Main {\n    public static void main(String[] args) {\n        // BUG: Syntax error, semicolons not commas\n        for (int i=0, i<5, i++) {\n            System.out.print(i + \" \");\n        }\n    }\n}",
+    "solution_code": "public class Main {\n    public static void main(String[] args) {\n        for (int i=0; i<5; i++) {\n            System.out.print(i + \" \");\n        }\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "0 1 2 3 4 "
+      }
+    ],
+    "hints": [
+      "Use semicolons ; inside for loop, not commas."
+    ],
+    "xp": 150
+  },
+  {
+    "id": 206,
+    "type": "lesson_unit",
+    "title": "Module 6: Methods",
+    "language": "java",
+    "difficulty": "Medium",
+    "description": "Functions in classes.",
+    "story_text": "# 🧩 Methods\n\nInside a class, functions are called methods.\n\n`public static int add(int a, int b)`\n\n`static` means it belongs to the class, not an object.",
+    "quiz_data": "[{\"question\": \"Call without object?\", \"options\": [\"public\", \"private\", \"static\", \"final\"], \"answer\": 2}]",
+    "buggy_code": "public class Main {\n    // BUG: Missing return type\n    public static add(int a, int b) {\n        return a + b;\n    }\n    public static void main(String[] args) {\n        System.out.println(add(5, 5));\n    }\n}",
+    "solution_code": "public class Main {\n    public static int add(int a, int b) {\n        return a + b;\n    }\n    public static void main(String[] args) {\n        System.out.println(add(5, 5));\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "10"
+      }
+    ],
+    "hints": [
+      "Specify return type 'int' before method name."
+    ],
+    "xp": 200
+  },
+  {
+    "id": 207,
+    "type": "lesson_unit",
+    "title": "Module 7: Classes",
+    "language": "java",
+    "difficulty": "Medium",
+    "description": "Objects everywhere.",
+    "story_text": "# 🏭 Factory\n\n`Dog d = new Dog();`\n\nIn Java, almost everything is an object.",
+    "quiz_data": "[{\"question\": \"Create object keyword?\", \"options\": [\"create\", \"new\", \"make\", \"init\"], \"answer\": 1}]",
+    "buggy_code": "class Dog {\n    String name;\n}\npublic class Main {\n    public static void main(String[] args) {\n        Dog d = new Dog();\n        d.name = \"Buddy\";\n        // BUG: System.out.println(d) prints address by default without toString\n        // Actually, let's make a NullPointerException\n        Dog d2 = null;\n        System.out.println(d2.name);\n    }\n}",
+    "solution_code": "class Dog {\n    String name;\n}\npublic class Main {\n    public static void main(String[] args) {\n        Dog d = new Dog();\n        d.name = \"Buddy\";\n        System.out.println(d.name);\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "Buddy"
+      }
+    ],
+    "hints": [
+      "d2 is null. You cannot access .name on null.",
+      "Directly print d.name"
+    ],
+    "xp": 250
+  },
+  {
+    "id": 208,
+    "type": "lesson_unit",
+    "title": "Module 8: ArrayList",
+    "language": "java",
+    "difficulty": "Medium",
+    "description": "Dynamic arrays.",
+    "story_text": "# 📦 Box That Grows\n\n`ArrayList<String> list = new ArrayList<>();`\n\n- `add()`\n- `get(index)`\n- `size()`",
+    "quiz_data": "[{\"question\": \"Get item at index?\", \"options\": [\"[i]\", \".at(i)\", \".get(i)\", \".item(i)\"], \"answer\": 2}]",
+    "buggy_code": "import java.util.ArrayList;\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> list = new ArrayList<>();\n        list.add(\"Java\");\n        // BUG: Using [] to access\n        System.out.println(list[0]);\n    }\n}",
+    "solution_code": "import java.util.ArrayList;\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> list = new ArrayList<>();\n        list.add(\"Java\");\n        System.out.println(list.get(0));\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "Java"
+      }
+    ],
+    "hints": [
+      "Use .get(0) instead of [0]."
+    ],
+    "xp": 250
+  },
+  {
+    "id": 209,
+    "type": "lesson_unit",
+    "title": "Module 9: HashMap",
+    "language": "java",
+    "difficulty": "Hard",
+    "description": "Key-Value store.",
+    "story_text": "# 🗺️ Map\n\n`HashMap<String, Integer> map = new HashMap<>();`\n`map.put(\"A\", 1);`",
+    "quiz_data": "[{\"question\": \"Add item?\", \"options\": [\"add\", \"put\", \"insert\", \"push\"], \"answer\": 1}]",
+    "buggy_code": "import java.util.HashMap;\npublic class Main {\n    public static void main(String[] args) {\n        HashMap<String, Integer> scores = new HashMap<>();\n        scores.put(\"Alice\", 100);\n        // BUG: Trying to use get onto null logic or wrong type? Let's use syntax error\n        System.out.println(scores.get(\"Alice\");\n        // Missing closing paren\n    }\n}",
+    "solution_code": "import java.util.HashMap;\npublic class Main {\n    public static void main(String[] args) {\n        HashMap<String, Integer> scores = new HashMap<>();\n        scores.put(\"Alice\", 100);\n        System.out.println(scores.get(\"Alice\"));\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "100"
+      }
+    ],
+    "hints": [
+      "Close the parentheses."
+    ],
+    "xp": 300
+  },
+  {
+    "id": 210,
+    "type": "lesson_unit",
+    "title": "Module 10: Private & Public",
+    "language": "java",
+    "difficulty": "Medium",
+    "description": "Access modifiers.",
+    "story_text": "# 🔒 Security\n\n- `public`: Everyone can access\n- `private`: Only this class\n- `protected`: Subclasses too",
+    "quiz_data": "[{\"question\": \"Most restrictive?\", \"options\": [\"public\", \"private\", \"protected\", \"default\"], \"answer\": 1}]",
+    "buggy_code": "class Bank {\n    private int money = 1000;\n}\npublic class Main {\n    public static void main(String[] args) {\n        Bank b = new Bank();\n        // BUG: Accessing private field\n        System.out.println(b.money);\n    }\n}",
+    "solution_code": "class Bank {\n    public int money = 1000;\n}\npublic class Main {\n    public static void main(String[] args) {\n        Bank b = new Bank();\n        System.out.println(b.money);\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "1000"
+      }
+    ],
+    "hints": [
+      "Change 'private' to 'public' or add a getter."
+    ],
+    "xp": 300
+  },
+  {
+    "id": 211,
+    "type": "lesson_unit",
+    "title": "Module 11: Inheritance",
+    "language": "java",
+    "difficulty": "Hard",
+    "description": "Extending classes.",
+    "story_text": "# 🧬 DNA\n\n`class Cat extends Animal`\n\nJava only supports **single inheritance**.",
+    "quiz_data": "[{\"question\": \"Keyword?\", \"options\": [\"implements\", \"extends\", \"inherits\", \"super\"], \"answer\": 1}]",
+    "buggy_code": "class Animal {\n    void speak() { System.out.println(\"...\"); }\n}\n// BUG: Wrong keyword 'implements' for class inheritance\nclass Cat implements Animal {\n}\npublic class Main {\n    public static void main(String[] args) {\n        Cat c = new Cat();\n        c.speak();\n    }\n}",
+    "solution_code": "class Animal {\n    void speak() { System.out.println(\"...\"); }\n}\nclass Cat extends Animal {\n}\npublic class Main {\n    public static void main(String[] args) {\n        Cat c = new Cat();\n        c.speak();\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "..."
+      }
+    ],
+    "hints": [
+      "Use 'extends' for classes, 'implements' for interfaces."
+    ],
+    "xp": 350
+  },
+  {
+    "id": 212,
+    "type": "lesson_unit",
+    "title": "Module 12: Interfaces",
+    "language": "java",
+    "difficulty": "Hard",
+    "description": "Contracts.",
+    "story_text": "# 📜 The Contract\n\n`interface Drawable { void draw(); }`\n\nIf you implement it, you MUST define the methods.",
+    "quiz_data": "[{\"question\": \"Keyword?\", \"options\": [\"extends\", \"uses\", \"implements\", \"copies\"], \"answer\": 2}]",
+    "buggy_code": "interface Bot {\n    void run();\n}\nclass Robot implements Bot {\n    // BUG: Missing public keyword (interface methods are public)\n    void run() { \n        System.out.println(\"Running\");\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Robot r = new Robot();\n        r.run();\n    }\n}",
+    "solution_code": "interface Bot {\n    void run();\n}\nclass Robot implements Bot {\n    public void run() { \n        System.out.println(\"Running\");\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Robot r = new Robot();\n        r.run();\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "Running"
+      }
+    ],
+    "hints": [
+      "Interface methods are public. Your implementation must be 'public' too."
+    ],
+    "xp": 350
+  },
+  {
+    "id": 213,
+    "type": "lesson_unit",
+    "title": "Module 13: Try-Catch",
+    "language": "java",
+    "difficulty": "Medium",
+    "description": "Handling errors.",
+    "story_text": "# 🛡️ Shield\n\nCatch exceptions before they crash your app.\n\n`try { ... } catch (Exception e) { ... }`",
+    "quiz_data": "[{\"question\": \"Catches error?\", \"options\": [\"try\", \"catch\", \"finally\", \"throw\"], \"answer\": 1}]",
+    "buggy_code": "public class Main {\n    public static void main(String[] args) {\n        int[] arr = {1};\n        // BUG: Uncaught exception\n        System.out.println(arr[5]);\n    }\n}",
+    "solution_code": "public class Main {\n    public static void main(String[] args) {\n        int[] arr = {1};\n        try {\n             System.out.println(arr[5]);\n        } catch (Exception e) {\n            System.out.println(\"Error\");\n        }\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "Error"
+      }
+    ],
+    "hints": [
+      "Wrap valid logical code in try-catch block."
+    ],
+    "xp": 300
+  },
+  {
+    "id": 214,
+    "type": "lesson_unit",
+    "title": "Module 14: Constructor",
+    "language": "java",
+    "difficulty": "Medium",
+    "description": "Building objects.",
+    "story_text": "# 🏗️ Builder\n\nSame name as class. No return type.",
+    "quiz_data": "[{\"question\": \"Triggered when?\", \"options\": [\"new Object()\", \"Object.init()\", \"Program start\", \"Never\"], \"answer\": 0}]",
+    "buggy_code": "class Car {\n    int speed;\n    // BUG: void return type makes it a method, not constructor\n    void Car() {\n        speed = 100;\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Car c = new Car();\n        System.out.println(c.speed);\n    }\n}",
+    "solution_code": "class Car {\n    int speed;\n    Car() {\n        speed = 100;\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Car c = new Car();\n        System.out.println(c.speed);\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "100"
+      }
+    ],
+    "hints": [
+      "Constructors have no return type, not even void."
+    ],
+    "xp": 250
+  },
+  {
+    "id": 215,
+    "type": "lesson_unit",
+    "title": "Module 15: Static",
+    "language": "java",
+    "difficulty": "Hard",
+    "description": "Shared members.",
+    "story_text": "# ⚡ Shared Power\n\n`static` variables are shared by ALL objects of that class.",
+    "quiz_data": "[{\"question\": \"Static method can access instance vars?\", \"options\": [\"Yes\", \"No\", \"Sometimes\", \"Only public\"], \"answer\": 1}]",
+    "buggy_code": "public class Main {\n    int x = 5;\n    public static void main(String[] args) {\n        // BUG: Accessing non-static field from static method\n        System.out.println(x);\n    }\n}",
+    "solution_code": "public class Main {\n    static int x = 5;\n    public static void main(String[] args) {\n        System.out.println(x);\n    }\n}",
+    "tests": [
+      {
+        "input": "",
+        "expected": "5"
+      }
+    ],
+    "hints": [
+      "Make x static: 'static int x'"
+    ],
+    "xp": 300
+  }
+]

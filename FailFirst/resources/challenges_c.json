@@ -1,0 +1,451 @@
+[
+    {
+        "id": 101,
+        "type": "lesson_unit",
+        "title": "Module 1: Hello C",
+        "language": "c",
+        "difficulty": "Intro",
+        "description": "The mother of modern languages.",
+        "story_text": "# 🦕 The Dinosaur\n\nC was created in 1972 by Dennis Ritchie. It runs the world (literally, kernels are written in C).\n\nUse `printf` to talk.",
+        "quiz_data": "[{\"question\": \"Library for printf?\", \"options\": [\"<iostream>\", \"<stdio.h>\", \"<conio.h>\", \"<stdlib.h>\"], \"answer\": 1}]",
+        "buggy_code": "#include <stdio.h>\n\nint main() {\n    printf(\"Hello World\")\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nint main() {\n    printf(\"Hello World\");\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "Hello World"
+            }
+        ],
+        "hints": [
+            "Semicolons are mandatory."
+        ],
+        "xp": 100
+    },
+    {
+        "id": 102,
+        "type": "lesson_unit",
+        "title": "Module 2: Format Specifiers",
+        "language": "c",
+        "difficulty": "Easy",
+        "description": "Telling printf what to print.",
+        "story_text": "# 🎭 Placeholders\n\n`printf` needs to know the type.\n\n- `%d`: Integer\n- `%f`: Float\n- `%c`: Char\n- `%s`: String",
+        "quiz_data": "[{\"question\": \"Specifier for integer?\", \"options\": [\"%i\", \"%d\", \"%int\", \"%num\"], \"answer\": 1}]",
+        "buggy_code": "#include <stdio.h>\n\nint main() {\n    int age = 25;\n    // BUG: Using %f for integer\n    printf(\"I am %f years old\", age);\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nint main() {\n    int age = 25;\n    printf(\"I am %d years old\", age);\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "I am 25 years old"
+            }
+        ],
+        "hints": [
+            "%f is for floats. Use %d for decimals (integers)."
+        ],
+        "xp": 150
+    },
+    {
+        "id": 103,
+        "type": "lesson_unit",
+        "title": "Module 3: Scanf (Input)",
+        "language": "c",
+        "difficulty": "Easy",
+        "description": "Reading user input.",
+        "story_text": "# 📥 Scanf\n\n`scanf(\"%d\", &variable);`\n\nDon't forget the `&` (address of) operator!",
+        "quiz_data": "[{\"question\": \"What does & mean?\", \"options\": [\"And\", \"Address of\", \"Value of\", \"Reference\"], \"answer\": 1}]",
+        "buggy_code": "#include <stdio.h>\n\nint main() {\n    int num;\n    // BUG: Missing &\n    scanf(\"%d\", num);\n    printf(\"%d\", num);\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nint main() {\n    int num;\n    scanf(\"%d\", &num);\n    printf(\"%d\", num);\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "42",
+                "expected": "42"
+            }
+        ],
+        "hints": [
+            "scanf needs the ADDRESS of the variable.",
+            "Add '&' before num."
+        ],
+        "xp": 150
+    },
+    {
+        "id": 104,
+        "type": "lesson_unit",
+        "title": "Module 4: Pointers Basics",
+        "language": "c",
+        "difficulty": "Medium",
+        "description": "Pointing to memory.",
+        "story_text": "# 👉 Pointing\n\n`int *ptr` holds an address.\n`*ptr` accesses the value.",
+        "quiz_data": "[{\"question\": \"Size of pointer on 64-bit?\", \"options\": [\"4 bytes\", \"8 bytes\", \"Depends\", \"2 bytes\"], \"answer\": 1}]",
+        "buggy_code": "#include <stdio.h>\n\nint main() {\n    int x = 100;\n    // BUG: Assigning value directly to pointer, not address\n    int *p = x;\n    printf(\"%d\", *p);\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nint main() {\n    int x = 100;\n    int *p = &x;\n    printf(\"%d\", *p);\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "100"
+            }
+        ],
+        "hints": [
+            "Pointers store ADDRESSES.",
+            "Use '&x' to get the address."
+        ],
+        "xp": 200
+    },
+    {
+        "id": 105,
+        "type": "lesson_unit",
+        "title": "Module 5: Strings (Char Arrays)",
+        "language": "c",
+        "difficulty": "Medium",
+        "description": "Text in C.",
+        "story_text": "# 🧵 String Theory\n\nC has no `string` type. It has arrays of `char` ending with `\\0` (null terminator).\n\n`char name[] = \"Bob\";`",
+        "quiz_data": "[{\"question\": \"What ends a C string?\", \"options\": [\"Nothing\", \"Null terminator \\0\", \"Dot\", \"Newline\"], \"answer\": 1}]",
+        "buggy_code": "#include <stdio.h>\n\nint main() {\n    // BUG: Array too small for \"Hello\" + \\0 (needs 6)\n    char str[5] = \"Hello\";\n    printf(\"%s\", str);\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nint main() {\n    char str[6] = \"Hello\";\n    printf(\"%s\", str);\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "Hello"
+            }
+        ],
+        "hints": [
+            "\"Hello\" is 5 chars, but C strings need a \\0 at the end.",
+            "Size should be at least 6."
+        ],
+        "xp": 200
+    },
+    {
+        "id": 106,
+        "type": "lesson_unit",
+        "title": "Module 6: String Compare",
+        "language": "c",
+        "difficulty": "Medium",
+        "description": "Comparing strings.",
+        "story_text": "# ⚖️ Equality\n\nYou cannot use `==` on strings! It compares addresses.\n\nUse `strcmp(a, b)` from `<string.h>`.",
+        "quiz_data": "[{\"question\": \"Library for strcmp?\", \"options\": [\"<strings.h>\", \"<string.h>\", \"<text.h>\", \"<stdstr.h>\"], \"answer\": 1}]",
+        "buggy_code": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char p[] = \"pass\";\n    // BUG: Using == to compare strings\n    if (p == \"pass\") {\n        printf(\"Access\");\n    } else {\n        printf(\"Deny\");\n    }\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char p[] = \"pass\";\n    if (strcmp(p, \"pass\") == 0) {\n        printf(\"Access\");\n    } else {\n        printf(\"Deny\");\n    }\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "Access"
+            }
+        ],
+        "hints": [
+            "Use strcmp().",
+            "If strcmp returns 0, they are equal."
+        ],
+        "xp": 250
+    },
+    {
+        "id": 107,
+        "type": "lesson_unit",
+        "title": "Module 7: Malloc (Dynamic Memory)",
+        "language": "c",
+        "difficulty": "Hard",
+        "description": "Manual allocation.",
+        "story_text": "# 🏗️ Building Blocks\n\n`malloc(size)` requests memory. Returns `void*`.\n\nAlways `free()` what you malloc!",
+        "quiz_data": "[{\"question\": \"Return type of malloc?\", \"options\": [\"int*\", \"char*\", \"void*\", \"null\"], \"answer\": 2}]",
+        "buggy_code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    // BUG: Allocating only size of pointer, not int\n    int *p = (int*)malloc(sizeof(int*));\n    *p = 500;\n    printf(\"%d\", *p);\n    free(p);\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *p = (int*)malloc(sizeof(int));\n    *p = 500;\n    printf(\"%d\", *p);\n    free(p);\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "500"
+            }
+        ],
+        "hints": [
+            "Use sizeof(int), not sizeof(int*)."
+        ],
+        "xp": 300
+    },
+    {
+        "id": 108,
+        "type": "lesson_unit",
+        "title": "Module 8: Structs",
+        "language": "c",
+        "difficulty": "Medium",
+        "description": "Grouping data.",
+        "story_text": "# 📦 Packages\n\nStructs hold related data.\n\n`struct Point { int x; int y; };`",
+        "quiz_data": "[{\"question\": \"Access member of pointer to struct?\", \"options\": [\".\", \"->\", \"::\", \"#\"], \"answer\": 1}]",
+        "buggy_code": "#include <stdio.h>\n\nstruct Player {\n    int score;\n};\n\nint main() {\n    struct Player p;\n    struct Player *ptr = &p;\n    // BUG: Trying to use . on pointer\n    ptr.score = 100;\n    printf(\"%d\", p.score);\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nstruct Player {\n    int score;\n};\n\nint main() {\n    struct Player p;\n    struct Player *ptr = &p;\n    ptr->score = 100;\n    printf(\"%d\", p.score);\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "100"
+            }
+        ],
+        "hints": [
+            "For pointers, use arrow operator '->'",
+            "Or dereference (*ptr).score"
+        ],
+        "xp": 250
+    },
+    {
+        "id": 109,
+        "type": "lesson_unit",
+        "title": "Module 9: Macros",
+        "language": "c",
+        "difficulty": "Medium",
+        "description": "Preprocessor magic.",
+        "story_text": "# 🔄 Text Replacement\n\n`#define PI 3.14`\n\nMacros are replaced BEFORE compilation.",
+        "quiz_data": "[{\"question\": \"Processed by?\", \"options\": [\"Compiler\", \"Linker\", \"Preprocessor\", \"OS\"], \"answer\": 2}]",
+        "buggy_code": "#include <stdio.h>\n// BUG: Semicolon in define replaces text with semicolon!\n#define MAX 100;\n\nint main() {\n    printf(\"%d\", MAX);\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n#define MAX 100\n\nint main() {\n    printf(\"%d\", MAX);\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "100"
+            }
+        ],
+        "hints": [
+            "Don't put semicolons in #define values unless you really mean to."
+        ],
+        "xp": 200
+    },
+    {
+        "id": 110,
+        "type": "lesson_unit",
+        "title": "Module 10: File I/O",
+        "language": "c",
+        "difficulty": "Hard",
+        "description": "Reading/Writing files.",
+        "story_text": "# 📂 Persistence\n\n`FILE *f = fopen(\"file.txt\", \"w\");`\n\nModes: \"r\" (read), \"w\" (write), \"a\" (append).",
+        "quiz_data": "[{\"question\": \"Check if file opened?\", \"options\": [\"f != NULL\", \"f.isOpen()\", \"exists(f)\", \"try/catch\"], \"answer\": 0}]",
+        "buggy_code": "#include <stdio.h>\n\nint main() {\n    FILE *f = fopen(\"test.txt\", \"w\");\n    // BUG: Writing to file but using wrong function or syntax\n    fprintf(f, \"Hello\");\n    // BUG: Missing close\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nint main() {\n    FILE *f = fopen(\"test.txt\", \"w\");\n    if (f) {\n        fprintf(f, \"Hello\");\n        fclose(f);\n    }\n    printf(\"Written\");\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "Written"
+            }
+        ],
+        "hints": [
+            "Always fclose() your files.",
+            "Check if f is NULL."
+        ],
+        "xp": 350
+    },
+    {
+        "id": 111,
+        "type": "lesson_unit",
+        "title": "Module 11: Switch Fallthrough",
+        "language": "c",
+        "difficulty": "Medium",
+        "description": "The classic bug.",
+        "story_text": "# 🕳️ Trapdoor\n\nCases fall through without `break`.",
+        "quiz_data": "[{\"question\": \"Is fallthrough useful?\", \"options\": [\"Never\", \"Always\", \"Sometimes\", \"Error\"], \"answer\": 2}]",
+        "buggy_code": "#include <stdio.h>\n\nint main() {\n    int x = 1;\n    switch(x) {\n        case 1:\n            printf(\"A\");\n        case 2:\n            printf(\"B\");\n            break;\n    }\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nint main() {\n    int x = 1;\n    switch(x) {\n        case 1:\n            printf(\"A\");\n            break;\n        case 2:\n            printf(\"B\");\n            break;\n    }\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "A"
+            }
+        ],
+        "hints": [
+            "Add 'break;'"
+        ],
+        "xp": 200
+    },
+    {
+        "id": 112,
+        "type": "lesson_unit",
+        "title": "Module 12: Void Pointers",
+        "language": "c",
+        "difficulty": "Hard",
+        "description": "Generic pointers.",
+        "story_text": "# 🎭 The Actor\n\n`void*` can point to anything. But you must cast it back to use it.",
+        "quiz_data": "[{\"question\": \"Can you dereference void*?\", \"options\": [\"Yes\", \"No\", \"Only integers\", \"Maybe\"], \"answer\": 1}]",
+        "buggy_code": "#include <stdio.h>\n\nint main() {\n    int a = 10;\n    void *ptr = &a;\n    // BUG: Dereferencing void* directly\n    printf(\"%d\", *ptr);\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nint main() {\n    int a = 10;\n    void *ptr = &a;\n    printf(\"%d\", *(int*)ptr);\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "10"
+            }
+        ],
+        "hints": [
+            "Cast it first: *(int*)ptr"
+        ],
+        "xp": 350
+    },
+    {
+        "id": 113,
+        "type": "lesson_unit",
+        "title": "Module 13: Buffer Overflow",
+        "language": "c",
+        "difficulty": "Nightmare",
+        "description": "Security nightmare.",
+        "story_text": "# 💥 Boom\n\nWriting past the end of an array corrupts memory.",
+        "quiz_data": "[{\"question\": \"Safer string format?\", \"options\": [\"%s\", \"%10s\", \"gets()\", \"scanf\"], \"answer\": 1}]",
+        "buggy_code": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char buffer[5];\n    // BUG: Strcpy does not check bounds\n    strcpy(buffer, \"TooLong\");\n    printf(\"Copied\");\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char buffer[10];\n    strcpy(buffer, \"TooLong\");\n    printf(\"Copied\");\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "Copied"
+            }
+        ],
+        "hints": [
+            "Increase buffer size."
+        ],
+        "xp": 400
+    },
+    {
+        "id": 114,
+        "type": "lesson_unit",
+        "title": "Module 14: Enum",
+        "language": "c",
+        "difficulty": "Easy",
+        "description": "Named integers.",
+        "story_text": "# 🏷️ Labels\n\n`enum State { IDLE, RUN, JUMP };`",
+        "quiz_data": "[{\"question\": \"Value of first enum?\", \"options\": [\"0\", \"1\", \"-1\", \"null\"], \"answer\": 0}]",
+        "buggy_code": "#include <stdio.h>\n\nenum Color { RED, GREEN, BLUE };\n\nint main() {\n    enum Color c = GREEN;\n    // BUG: Looking for wrong value logic\n    if (c == 0) printf(\"Green\");\n    else printf(\"Not Green\");\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nenum Color { RED, GREEN, BLUE };\n\nint main() {\n    enum Color c = GREEN;\n    if (c == 1) printf(\"Green\");\n    else printf(\"Not Green\");\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "Green"
+            }
+        ],
+        "hints": [
+            "RED=0, GREEN=1, BLUE=2"
+        ],
+        "xp": 150
+    },
+    {
+        "id": 115,
+        "type": "lesson_unit",
+        "title": "Module 15: Typedef",
+        "language": "c",
+        "difficulty": "Easy",
+        "description": "Creating aliases.",
+        "story_text": "# 🎭 Nicknames\n\n`typedef unsigned int uint;`",
+        "quiz_data": "[{\"question\": \"Purpose?\", \"options\": [\"Create type\", \"Alias type\", \"Import\", \"Macro\"], \"answer\": 1}]",
+        "buggy_code": "#include <stdio.h>\n\ntypedef int meters;\n\nint main() {\n    meters h = 100;\n    // BUG: Just syntax error in main\n    printf(\"%d\", h);\n    // Missing return\n}",
+        "solution_code": "#include <stdio.h>\n\ntypedef int meters;\n\nint main() {\n    meters h = 100;\n    printf(\"%d\", h);\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "100"
+            }
+        ],
+        "hints": [
+            "Add return 0;",
+            "Finish the function."
+        ],
+        "xp": 150
+    },
+    {
+        "id": 116,
+        "type": "lesson_unit",
+        "title": "Module 16: Bitwise Ops",
+        "language": "c",
+        "difficulty": "Hard",
+        "description": "Bit level hacking.",
+        "story_text": "# 010101\n\n`&` (AND), `|` (OR), `^` (XOR), `<<` (Left Shift).",
+        "quiz_data": "[{\"question\": \"5 (101) << 1 = ?\", \"options\": [\"10 (1010)\", \"2\", \"50\", \"1\"], \"answer\": 0}]",
+        "buggy_code": "#include <stdio.h>\n\nint main() {\n    int flags = 1; // 0001\n    // BUG: Trying to set 2nd bit (0010) using AND instead of OR\n    flags = flags & 2;\n    printf(\"%d\", flags);\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nint main() {\n    int flags = 1;\n    flags = flags | 2;\n    printf(\"%d\", flags);\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "3"
+            }
+        ],
+        "hints": [
+            "Use '|' to set bits.",
+            "'&' masks them."
+        ],
+        "xp": 300
+    },
+    {
+        "id": 117,
+        "type": "lesson_unit",
+        "title": "Module 17: Pre-increment vs Post-increment",
+        "language": "c",
+        "difficulty": "Medium",
+        "description": "++i vs i++.",
+        "story_text": "# ➕ The Difference\n\n`++i`: Increment, then use.\n`i++`: Use, then increment.",
+        "quiz_data": "[{\"question\": \"int i=0; int a=i++; What is a?\", \"options\": [\"0\", \"1\", \"2\", \"Error\"], \"answer\": 0}]",
+        "buggy_code": "#include <stdio.h>\n\nint main() {\n    int i = 5;\n    int a = ++i;\n    // BUG: Expecting 5 but gets 6\n    if (a == 5) printf(\"Pre\");\n    else printf(\"Post\");\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nint main() {\n    int i = 5;\n    int a = i++;\n    if (a == 5) printf(\"Pre\");\n    else printf(\"Post\");\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "Pre"
+            }
+        ],
+        "hints": [
+            "Use i++ to use the old value first."
+        ],
+        "xp": 200
+    },
+    {
+        "id": 118,
+        "type": "lesson_unit",
+        "title": "Module 18: Recursion (Factorial)",
+        "language": "c",
+        "difficulty": "Medium",
+        "description": "Classic example.",
+        "story_text": "# ❗ Factorial\n\n5! = 5 * 4 * 3 * 2 * 1",
+        "quiz_data": "[{\"question\": \"0! = ?\", \"options\": [\"0\", \"1\", \"Infinite\", \"Error\"], \"answer\": 1}]",
+        "buggy_code": "#include <stdio.h>\n\nint fact(int n) {\n    if (n == 0) return 0; // BUG: 0! is 1\n    return n * fact(n-1);\n}\n\nint main() {\n    printf(\"%d\", fact(5));\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nint fact(int n) {\n    if (n == 0) return 1;\n    return n * fact(n-1);\n}\n\nint main() {\n    printf(\"%d\", fact(5));\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "120"
+            }
+        ],
+        "hints": [
+            "Factorial of 0 is 1."
+        ],
+        "xp": 250
+    },
+    {
+        "id": 119,
+        "type": "lesson_unit",
+        "title": "Module 19: Command Line Args",
+        "language": "c",
+        "difficulty": "Hard",
+        "description": "argc and argv.",
+        "story_text": "# 💻 CLI\n\n`main(int argc, char *argv[])`\n\n`argv[0]` is the program name.",
+        "quiz_data": "[{\"question\": \"argc holds?\", \"options\": [\"Argument count\", \"Argument values\", \"Return code\", \"Env vars\"], \"answer\": 0}]",
+        "buggy_code": "#include <stdio.h>\n\nint main(int argc, char *argv[]) {\n    // BUG: Accessing argv[1] without checking argc (segfault if no args)\n    // Actually for test environment we usually have no args\n    // Let's print program name\n    printf(\"%s\", argv[0]);\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nint main(int argc, char *argv[]) {\n    if (argc > 0) printf(\"%s\", argv[0]);\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "./program"
+            }
+        ],
+        "hints": [
+            "argv[0] is program name."
+        ],
+        "xp": 300
+    },
+    {
+        "id": 120,
+        "type": "lesson_unit",
+        "title": "Module 20: 2D Arrays",
+        "language": "c",
+        "difficulty": "Medium",
+        "description": "Grids and matrices.",
+        "story_text": "# 🔳 Matrix\n\n`int grid[3][3];`\n\nRow first, then Column.",
+        "quiz_data": "[{\"question\": \"grid[y][x] usually means?\", \"options\": [\"Row y, Col x\", \"Col y, Row x\", \"Depths\", \"Time\"], \"answer\": 0}]",
+        "buggy_code": "#include <stdio.h>\n\nint main() {\n    int grid[2][2] = {{1, 2}, {3, 4}};\n    // BUG: Accessing [2][0] is out of bounds (rows are 0, 1)\n    printf(\"%d\", grid[2][0]);\n    return 0;\n}",
+        "solution_code": "#include <stdio.h>\n\nint main() {\n    int grid[2][2] = {{1, 2}, {3, 4}};\n    printf(\"%d\", grid[1][0]);\n    return 0;\n}",
+        "tests": [
+            {
+                "input": "",
+                "expected": "3"
+            }
+        ],
+        "hints": [
+            "Max index is 1 for size 2.",
+            "Try grid[1][0] for the 3."
+        ],
+        "xp": 250
+    }
+]
